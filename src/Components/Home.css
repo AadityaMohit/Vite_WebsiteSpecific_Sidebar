@@ -1,0 +1,527 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  flex-shrink: 0;  
+}
+
+.button-group {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
+}
+
+.new-button {
+  width: 50px; 
+  background: linear-gradient(45deg, #ff7f50, #ff6347); 
+  color: white; 
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  transition: background 0.3s, transform 0.08s, box-shadow 0.3s; 
+}
+
+.new-button:hover {
+  background: linear-gradient(45deg, #ff6a3e, #ff4500); 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.details {
+  position: absolute;
+  top: 10px;  
+  left: 10px; 
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 15px;  
+  padding: 20px;  
+  color: #ffffff;  
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(0, 255, 255, 0.3);  
+   
+  transition: all 0.3s ease;  
+}
+
+.details p {
+  margin: 0; 
+  font-size: 8px; 
+  opacity: 1; 
+ 
+}
+
+.details:hover {
+ 
+  transform: translateY(-5px); 
+}
+
+.details p {
+  margin: 0;  
+  font-size: 7px;  
+  opacity: 1;  
+  color: #1a1a4b;  
+}
+
+.details p strong {
+color: white;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); 
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.details {
+  animation: pulse 2s infinite; 
+  left: 182px;
+}
+
+.new-button:active {
+  transform: translateY(0); 
+  box-shadow: none; 
+}
+
+.add-note-button {
+  width: 50px;
+  background: linear-gradient(45deg, #007bff, #00c8ff);  
+  color: white;
+  border: none;
+  border-radius: 25px;  
+  cursor: pointer;
+  font-size: 16px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  transition: background 0.3s, transform 0.08s, box-shadow 0.3s;  
+}
+
+.add-note-button:hover {
+  background: linear-gradient(45deg, #0056b3, #0092cc);  
+  transform: translateY(-2px);  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.add-note-button:active {
+  transform: translateY(0);  
+  box-shadow: none;  
+}
+
+.notes-area {
+  flex-grow: 1; 
+  overflow-y: auto;
+  background-color: #e0f7fa;
+  padding: 10px;
+}
+
+.note-editor {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  flex-shrink: 0;  
+}
+
+.info {
+  display: flex;
+  align-items: center; 
+}
+
+.info b {
+  color: #007bff; 
+}
+
+.show-all-notes-button {
+  width: 50px; 
+  background: linear-gradient(45deg, #28a745, #34d058); 
+  color: white;
+  border: none;
+  border-radius: 25px; 
+  cursor: pointer;
+  font-size: 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s; 
+}
+
+.show-all-notes-button:hover {
+  background: linear-gradient(45deg, #218838, #28a745); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.show-all-notes-button:active {
+  transform: translateY(0); /* Return to normal position when clicked */
+  box-shadow: none; /* Remove shadow effect on click */
+}
+
+.note-editor {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.three-dots {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tiptap :first-child {
+  margin-top: 0;
+}
+
+.character-count {
+  align-items: center;
+  color: var(--gray-5);
+  display: flex;
+  font-size: 0.75rem;
+  gap: 0.5rem;
+  margin: 1.5rem;
+}
+
+.character-count svg {
+  color: var(--purple);
+}
+
+.character-count--warning,
+.character-count--warning svg {
+  color: var(--red);
+}
+
+.dropdown-content button:hover {
+  background-color: #ddd;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editor-container {
+  position: relative;
+}
+
+.options {
+  margin-left: 15rem;
+  top: 10px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.editor-container:hover .options {
+  visibility: visible;
+}
+
+.timestamp-dropdown {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 10px;
+  width: 150px;
+}
+
+.timestamp-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.timestamp-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.timestamp-button:hover {
+  background-color: #e2e2e2;
+}
+
+.note-editor a {
+  color: blue;
+}
+
+.note-editor a:hover {
+  color: darkblue;
+}
+
+.timestamp-dropdown {
+  top: 86.6px;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 10px;
+  width: 150px;
+}
+
+.timestamp-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.timestamp-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.three-dots {
+  cursor: pointer;
+}
+
+.timestamp {
+  font-size: 0.9em;
+  color: #555;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.paragraph-with-timestamp {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timestamp {
+  margin-right: 10px;
+  color: #888;
+}
+
+.editor-paragraph {
+  flex-grow: 1;
+}
+
+.note-editor {
+  position: relative;
+  
+}
+
+.note-editor p {
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.three-dots:hover .dropdown-content {
+  display: block;
+}
+
+.bubble-menu {
+  display: flex;
+  gap: 8px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bubble-menu button {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.bubble-menu button.is-active {
+  background-color: #f0f0f0;
+}
+.editor-header p {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  margin: 0;
+  font-size: 0.9rem;
+  color: #007BFF;
+}
+.editor-content img {
+  max-width: 20%; 
+  height: 50px;     
+}.uploaded-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.image-container {
+  position: relative;
+  margin: 5px;
+}
+
+ 
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red; /* Change as needed */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.editor-header p a {
+  color: #007BFF;
+  text-decoration: none;
+  word-break: break-all; 
+}
+.is-empty::before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  font-style: italic;
+  pointer-events: none; 
+  display: block;
+  position: absolute;
+}
+
+.bubble-menu button strong,
+.bubble-menu button em {
+  font-size: 1.2em;
+}
+
+.dropdown-content button {
+  padding: 10px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  background: none;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+.editor-content {
+  min-height: 50px;
+  overflow-y: auto;
+  text-align: left;  
+  padding: 10px; 
+}
+
+.editor-content p {
+  margin: 0;  
+  padding: 0;  
+}
+
+.count-display {
+  margin-bottom: 10px;
+}
+
+.note-editor h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+.timestamp-button {
+  background-color: #f1f1f1;  
+  border: none;  
+  color: #007bff;  
+  cursor: pointer;  
+  padding: 5px;  
+  margin: 0 2px; 
+  border-radius: 3px;  
+ 
+}
+.ProseMirror {
+  border: none;
+  outline: none;
+}
+.timestamp-button:hover {
+  background-color: #e2e2e2;  
+}.toggle-details-button {
+  position: absolute;  
+  top: -12px;  
+  left: 365px;  
+  background: linear-gradient(45deg, #007bff36, #00c8ff); 
+  border: none; 
+  cursor: pointer;  
+  color: #ffffff;  
+  font-size: 12px;  
+   
+  border-radius: 50px;  
+ 
+  transition: all 0.3s ease;  
+}
+
+.toggle-details-button:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.5);  
+  transform: translateY(-5px); 
+}
+
+.toggle-details-button:active {
+  transform: translateY(2px); 
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);  
+}
